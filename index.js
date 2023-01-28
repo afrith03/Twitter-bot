@@ -25,14 +25,9 @@ const tweet = async () => {
   }
 };
 
-app.use("/", (req, res) => {
-  setInterval(async () => {
-    var t = await tweet();
-    res.json({ message: "hello twitter bot", tweet: t });
-  }, 10000);
-
-  //   var t = await tweet();
-  //   res.json({ message: "hello twitter bot", tweet: t });
+app.use("/", async(req, res) => {
+  var t = await tweet();
+  res.json({ message: "hello twitter bot", tweet: t });
 });
 
 // const cronTweet = new CronJob("30 * * * * *", async () => {
