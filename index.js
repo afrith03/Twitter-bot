@@ -11,20 +11,24 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+const tweet = async () => {
+    try {
+      var tweetText = await openAIbot();
+      await twitterClient.v2.tweet(
+        tweetText + "\n \n Follow for More #lifequotes"
+      );
+      console.log("Tewwt success" + tweetText);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
 app.use("/", (req, res) => {
   res.json({ message: "hello twitter bot" });
+  tweet();
 });
-const tweet = async () => {
-  try {
-    var tweetText = await openAIbot();
-    await twitterClient.v2.tweet(
-      tweetText + "\n \n Follow for More #lifequotes"
-    );
-    console.log("Tewwt success" + tweetText);
-  } catch (e) {
-    console.log(e);
-  }
-};
+
 
 const cronTweet = new CronJob("30 * * * * *", async () => {
   tweet();
