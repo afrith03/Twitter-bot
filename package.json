@@ -1,0 +1,21 @@
+
+
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "simple twitter bot to post daily content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^2.2.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openai": "^3.1.0",
+    "twitter-api-v2": "^1.14.0"
+  }
+}
