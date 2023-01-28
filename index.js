@@ -16,7 +16,7 @@ const tweet = async () => {
   try {
     var tweetText = await openAIbot();
     await twitterClient.v2.tweet(
-      tweetText + "\n \n Follow for More #lifequotes",
+      tweetText + "\n \n Follow for More #lifequotes"
     );
     console.log("Tewwt success" + tweetText);
   } catch (e) {
