@@ -25,8 +25,8 @@ const tweet = async () => {
   }
 };
 
-app.use("/", (req, res) => {
-  var t = tweet();
+app.use("/", async (req, res) => {
+  var t = await tweet();
   res.json({ message: "hello twitter bot", tweet: t });
 });
 
