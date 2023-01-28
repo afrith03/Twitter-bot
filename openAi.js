@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const  openAIbot = async () => {
+const openAIbot = async () => {
   const completion = await openai.createCompletion({
     model: "text-davinci-001",
     prompt: "write a life quote",
