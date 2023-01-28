@@ -13,22 +13,22 @@ app.listen(port, () => {
 });
 
 const tweet = async () => {
-    try {
-      var tweetText = await openAIbot();
-      await twitterClient.v2.tweet(
-        tweetText.toString() + "\n \n Follow for More #lifequotes"
-      );
-      console.log("Tewwt success" + tweetText);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  try {
+    var tweetText = await openAIbot();
+    await twitterClient.v2.tweet(
+      tweetText.toString() + "\n \n Follow for More #lifequotes"
+    );
+    console.log("Tewwt success" + tweetText);
+    return tweetText.toString();
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 app.use("/", (req, res) => {
-  res.json({ message: "hello twitter bot" });
-  tweet();
+  var t = tweet();
+  res.json({ message: "hello twitter bot", tweet: t });
 });
-
 
 // const cronTweet = new CronJob("30 * * * * *", async () => {
 //   tweet();
