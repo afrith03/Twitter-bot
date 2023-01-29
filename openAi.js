@@ -4,14 +4,18 @@ const configuration = new Configuration({
   apiKey: process.env.OPEN_AI,
 });
 const openai = new OpenAIApi(configuration);
-let promptArray = ["write a life quote","write a inspirational quote","write a funny quote"]
-const getPrompt = ()=>{
-    let randPrompt = Math.random() * promptArray.length;
-    return promptArray[randPrompt]
-}
+let promptArray = [
+  "write a life quote",
+  "write a inspirational quote",
+  "write a funny quote",
+];
+const getPrompt = () => {
+  let randPrompt = Math.random() * promptArray.length;
+  return promptArray[randPrompt];
+};
 
 const openAIbot = async () => {
-   let prompt = getPrompt()
+  let prompt = getPrompt();
   const completion = await openai.createCompletion({
     model: "text-davinci-001",
     prompt: prompt,
