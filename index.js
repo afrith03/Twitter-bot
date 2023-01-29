@@ -25,10 +25,15 @@ const tweet = async () => {
   }
 };
 
-app.use("/", async(req, res) => {
+app.get("/", async(req, res) => {
   var t = await tweet();
   res.json({ message: "hello twitter bot", tweet: t });
 });
+
+app.post("/twitter", async(req, res) => {
+    var t = await tweet();
+    res.json({ message: "hello twitter bot", tweet: t });
+  });
 
 // const cronTweet = new CronJob("30 * * * * *", async () => {
 //   tweet();
