@@ -5,9 +5,8 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 let promptArray = [
-  "write a life quote",
-  "write a inspirational quote",
-  "write a funny quote",
+  "write a life quote in english",
+  "write an inspirational quote in english",
 ];
 const getPrompt = () => {
   let randPrompt = Math.random() * promptArray.length;
