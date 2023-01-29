@@ -7,12 +7,11 @@ const openai = new OpenAIApi(configuration);
 let promptArray = [
   "write a life quote in english",
   "write an inspirational quote in english",
-  "Write a funny quote",
-  "Write a qoute Technology"
-
+  "Write a funny quote in english",
+  "Write a qoute on Technology in english",
 ];
 const getPrompt = (arr) => {
-  let randPrompt = Math.round(Math.random() * (arr.length-1));
+  let randPrompt = Math.round(Math.random() * (arr.length - 1));
   return arr[randPrompt];
 };
 
