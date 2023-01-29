@@ -16,7 +16,7 @@ const tweet = async () => {
   try {
     var tweetText = await openAIbot();
     await twitterClient.v2.tweet(
-      tweetText.toString() + "\n \n Follow for More #lifequotes"
+      tweetText.toString() + "\n \n Follow for daily quotes #afrithtweets"
     );
     console.log("Tewwt success" + tweetText);
     return tweetText.toString();
