@@ -8,7 +8,6 @@ let promptArray = [
   "write a life quote in english",
   "write an inspirational quote in english",
   "Write a funny quote",
-  "Write a qoute on Black life",
   "Write a qoute Technology"
 
 ];
